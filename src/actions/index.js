@@ -6,3 +6,12 @@ export const fetchPosts = () => async (dispatch) => {
 		payload: data
 	}); 
 };
+
+export const deletePost = (id) => async (dispatch) => {
+	let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+		method: 'delete'
+	});
+ 	dispatch({
+		type: 'DELETE_POST'
+	}); 
+};

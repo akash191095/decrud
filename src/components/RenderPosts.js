@@ -2,31 +2,32 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
 import PostCard from './PostCard';
+import '../styles/render-posts.css';
 
 class RenderPosts extends React.Component {
 	componentDidMount() {
 		this.props.dispatch(fetchPosts());
 	}
 
-	// renderPosts = () => {
-	// 	return this.props.posts.map(item => {
-	// 		const { userId, title, body } = this.props.posts;
-	// 		<PostCard userID={} />
-	// 	});
-	// };
+	renderPosts = () => {
+		return this.props.posts.map((item) => {
+			const { userId, title, body, id } = item;
+			return <PostCard userID={userId} title={title} body={body} id={id} key={id}/>;
+		});
+	};
 
 	render() {
 		return (
-			<div>
-				<PostCard />
+			<div className='render-posts-wrapper'>
+				{this.renderPosts()}
 			</div>
 		);
-	};
-};
+	}
+}
 
 const mapStateToProps = (state) => {
 	return {
-		posts: state.posts.fetchedPosts
+		posts: state.posts.posts
 	};
 };
 
