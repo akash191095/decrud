@@ -1,0 +1,30 @@
+.post-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 40vw;
+    background-color: aliceblue;
+    padding: 2em;
+}
+
+.post-card-wrapper p {
+    margin: 0;
+}
+
+.post-card-avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 2em;
+}
+
+.user-id {
+    margin-top: .3em;
+}
+
+.post-card-title, .post-card-body {
+    margin-top: .8em;
+    text-align: justify;
+    text-justify: inter-word;
+
+}
