@@ -8,7 +8,7 @@ export const fetchPosts = () => async (dispatch) => {
 };
 
 export const deletePost = (id) => async (dispatch) => {
-	let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+	await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
 		method: 'delete'
 	});
 	dispatch({
@@ -17,7 +17,7 @@ export const deletePost = (id) => async (dispatch) => {
 };
 
 export const editPost = (id, body) => async (dispatch) => {
-	let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+	await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
 		method: 'PATCH',
 		body: JSON.stringify(body),
 		headers: {

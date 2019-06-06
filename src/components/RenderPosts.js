@@ -12,16 +12,12 @@ class RenderPosts extends React.Component {
 	renderPosts = () => {
 		return this.props.posts.map((item) => {
 			const { userId, title, body, id } = item;
-			return <PostCard userID={userId} title={title} body={body} id={id} key={id}/>;
+			return <PostCard userID={userId} title={title} body={body} id={id} key={id} />;
 		});
 	};
 
 	render() {
-		return (
-			<div className='render-posts-wrapper'>
-				{this.renderPosts()}
-			</div>
-		);
+		return <div className="render-posts-wrapper">{this.renderPosts()}</div>;
 	}
 }
 

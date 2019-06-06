@@ -41,7 +41,7 @@ class PostCard extends React.Component {
 								Delete
 							</button>
 							<button className="btn-edit" onClick={() => this.onEdit()}>
-								Edit
+								{this.state.showEditBox ? 'Close' : 'Edit'}
 							</button>
 						</div>
 					</div>
