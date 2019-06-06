@@ -12,7 +12,8 @@ export const deletePost = (id) => async (dispatch) => {
 		method: 'delete'
 	});
 	dispatch({
-		type: 'DELETE_POST'
+		type: 'DELETE_POST',
+		payload: id
 	});
 };
 
@@ -24,5 +25,8 @@ export const editPost = (id, body) => async (dispatch) => {
 			'Content-type': 'application/json; charset=UTF-8'
 		}
 	});
-	// might want to do other stuff...
+	dispatch({
+		type: 'EDIT_POST',
+		payload: { id, body }
+	});
 };
